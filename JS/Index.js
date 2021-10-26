@@ -6,7 +6,7 @@ Vue.createApp({
         return {
             dr: [],
             error: null,
-            Id : ""
+            Id: ""
            
             // titles : "",
             // artist : "",
@@ -19,7 +19,7 @@ Vue.createApp({
         // created() is a life cycle method, not an ordinary method
         // created() is called automatically when the page is loaded
         console.log("created method called")
-        this.helperGetPosts(baseUri)
+        this.helperGetdr(baseUri)
     },
     methods: {
         cleanList() {
@@ -33,10 +33,10 @@ Vue.createApp({
             } else {
                 const uri = baseUri + "?Id=" + uid
                 console.log("getById: " + uri)
-                this.helperGetPosts(uri)
+                this.helperGetdr(uri)
             }
         },
-        async helperGetPosts(uri) {
+        async helperGetdr(uri) {
             try {
                 const response = await axios.get(uri)
                 this.dr = await response.data

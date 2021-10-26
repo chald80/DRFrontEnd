@@ -29,7 +29,7 @@
      
             <div v-if="error" style="color: red">{{error}}</div>
      
-            <ul v-if="posts.length > 0">
+            <ul v-if="dr.length > 0">
                 <li v-for="drs in dr">
                     Id {{drs.Id}} : {{drs.title}}
                 </li>
@@ -43,7 +43,8 @@
             <div v-else style="font-style: italic;">No such posts</div>
         </div>
      
-        <script src="js/Index.js"></script>
+        <script src="JS/Index.js"></script>
 
 </body>
+
 </html>
