@@ -1,12 +1,12 @@
-const baseUri = "http://drrestaa.azurewebsites.net/api/dr"
-//const baseUri = "http://jsonplaceholder.typicode.com/posts"
+ const baseUri = "http://drrestaa.azurewebsites.net/api/dr"
+// const baseUri = "http://jsonplaceholder.typicode.com/posts"
 
 Vue.createApp({
     data() {
         return {
             dr: [],
             error: null,
-            Id: "",
+            Id: ""
            
             // titles : "",
             // artist : "",
@@ -22,11 +22,10 @@ Vue.createApp({
         this.helperGetdr(baseUri)
     },
     methods: {
-      async cleanList() {
+        cleanList() {
             this.dr = []
             this.error = null
         },
-        
         async getById(uid) {
             if (uid == null || uid == "") {
                 this.error = "No user id ...."
@@ -37,7 +36,6 @@ Vue.createApp({
                 this.helperGetdr(uri)
             }
         },
-
         async helperGetdr(uri) {
             try {
                 const response = await axios.get(uri)
