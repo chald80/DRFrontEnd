@@ -6,13 +6,8 @@ Vue.createApp({
         return {
             dr: [],
             error: null,
-            Id: ""
-           
-            // titles : "",
-            // artist : "",
-            // duration : "",
-            // publicationYear: "",
-           
+            id: ""
+        
         }
     },
     async created() {
@@ -21,6 +16,8 @@ Vue.createApp({
         console.log("created method called")
         this.helperGetdr(baseUri)
     },
+
+    
     methods: {
         cleanList() {
             this.dr = []
@@ -31,7 +28,7 @@ Vue.createApp({
                 this.error = "No user id ...."
                 this.dr = []
             } else {
-                const uri = baseUri + "?Id=" + uid
+                const uri = baseUri + "?id=" + uid
                 console.log("getById: " + uri)
                 this.helperGetdr(uri)
             }
